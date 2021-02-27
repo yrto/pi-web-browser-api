@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulando o DOM (Document Object Model)</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="formMain">
+        <div class="container">
+            <h1>
+                <span id="hora">##</span>:<span id="minuto">##</span>:<span id="segundo">##</span>:<span id="milisegundo">####</span>
+            </h1>
+            <hr>
+            <button id="start">Iniciar</button>
+            <button id="stop">Parar</button>
+            <button id="reset">Resetar</button>
+        </div>
+        <div class="" id="newDiv1"></div>
+        <div class="" id="newDiv2"></div>
+    </div>
+</body>
+
+<script>
+
+    let div0 = document.querySelector("body")
+    let div1 = document.querySelector("#newDiv1")
+    let div2 = document.querySelector("#newDiv2")
+
+    // const reset = document.querySelector("#reset")
+    // const buttons = document.querySelectorAll("button")
+
+    // console.log(reset)
+    // console.log(buttons)
+
+    // div1.innerHTML = `<p>Texto</p>`
+
+    // const texto = document.createTextNode("Adicionando texto dinamicamente")
+    // const paragrafo = document.createElement("p")
+
+    // paragrafo.appendChild(texto)
+    // div2.appendChild(paragrafo)
+
+    // div1.classList.add("red")
+    // div1.classList.replace("red", "blue")
+    // div2.classList.add("red")
+
+    // ----------------------------------------------
+
+    let horas = 0
+    let minutos = 0
+    let segundos = 0
+    let milisegundos = 0
+    let cronometro
+
+    let textHora = document.querySelector("#hora")
+    let textMinuto = document.querySelector("#minuto")
+    let textSegundo = document.querySelector("#segundo")
+    let textMilisegundo = document.querySelector("#milisegundo")
+
+    const btnStart = document.querySelector("#start")
+    btnStart.addEventListener("click", function () { start() })
+
+    const btnStop = document.querySelector("#stop")
+    btnStop.addEventListener("click", function () { stop() })
+
+    const btnReset = document.querySelector("#reset")
+    btnReset.addEventListener("click", function () { reset() })
+
+    function start() {
+        cronometro = setInterval(() => {
+            timer()
+        }, 10)
+    }
+
+    function stop() {
+        clearInterval(cronometro)
+    }
+
+    function reset() {
+        horas = 0
+        minutos = 0
+        segundos = 0
+        milisegundos = 0
+        textHora.innerHTML = "00"
+        textMinuto.innerHTML = "00"
+        textSegundo.innerHTML = "00"
+        textMilisegundo.innerHTML = "0000"
+    }
+
+    function timer() {
+        if ((milisegundos += 10) == 1000) {
+            milisegundos = 0
+            segundos++
+        }
+        if (segundos == 60) {
+            segundos = 0
+            minutos++
+        }
+        if (minutos == 60) {
+            minutos = 0
+            hora++
+        }
+        textHora.innerHTML = returnData(horas)
+        textMinuto.innerHTML = returnData(minutos)
+        textSegundo.innerHTML = returnData(segundos)
+        textMilisegundo.innerHTML = returnData(milisegundos)
+    }
+
+    const returnData = value => value < 10 ? `0${value}` : value
+
+</script>
+
+</html>

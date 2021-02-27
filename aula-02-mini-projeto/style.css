@@ -1,0 +1,27 @@
+/*
+
+Uma lista de coisas para fazer
+Um campo de texto para digitar o que fazer
+Um botão que adiciona o item na lista
+Quando apertado o botão o que foi escrito vai pra lista e o campo é limpo.
+
+*/
+
+body {
+    background-color: black;
+    color: white;
+    margin: 1em;
+    font-family: sans-serif;
+}
+
+ul { padding: 0; margin: 1em 0; }
+
+li {
+    list-style-position: inside;
+    padding: 0.5em;
+    border-top: 1px solid #444;
+}
+
+li:last-child {
+    border-bottom: 1px solid #444;
+}
