@@ -11,7 +11,6 @@ function addList(newText) {
         const textNode = document.createTextNode(newText)
 
         listElement.appendChild(textNode)
-        listElement.classList.add("list-group-item")
         lista.appendChild(listElement)
 
         entrada.value = ""
