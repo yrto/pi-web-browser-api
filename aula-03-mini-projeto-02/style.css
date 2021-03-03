@@ -21,7 +21,7 @@ ul li {
     justify-content: space-between;
     line-height: 2em;
     border-top: 1px solid;
-    padding: 0.5em 0;
+    padding: 0.5em;
 }
 
 ul li:last-child {border-bottom: 1px solid;}
@@ -73,14 +73,18 @@ input, button {
 }
 
 #tarefas a {
-    padding: 0 0.5em;
+    margin-left: 0.5em;
+}
+
+#tarefas a i {
+    width: 2em;
     line-height: 2em;
+    text-align: center;
 }
 
 #tarefas ul li {
     border-color: #dadada;
     transition: 200ms;
-    padding-left: 0.5em;
 }
 
 #tarefas ul li:hover {
@@ -94,3 +98,12 @@ input, button {
 #tarefas .tarefas-concluidas ul li {
     text-decoration: line-through;
 }
+
+/* ************************************** footer */
+
+#footer {
+    color: #ceccc5;
+    margin-top: 2.5em;
+}
+
+#footer p {font-size: 0.75em;}
