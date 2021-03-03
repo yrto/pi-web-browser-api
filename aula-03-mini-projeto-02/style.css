@@ -33,6 +33,10 @@ input, button {
     border: none;
 }
 
+input:focus, button:focus {
+    outline: darkmagenta solid 2px;
+}
+
 .hide {display: none;}
 
 /* ************************************** header */
@@ -58,7 +62,6 @@ input, button {
     color: white;
     background-color: darkorchid;
     margin-left: 0.5em;
-    transition: 200ms;
 }
 
 #formulario-entrada button:hover {
