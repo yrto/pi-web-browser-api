@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+* {margin: 0; padding: 0; font-family: 'Roboto Mono', monospace; font-weight: 400; box-sizing: border-box; outline: none;}
+
+/* ************************************** root */
+
+html {background-color: #f0f0f0; cursor: default;}
+
+body {margin: 0 auto; padding: 1em; max-width: 480px;}
+
+h2 {font-size: 0.875em; font-weight: 700; margin-top: 2em;}
+
+a {text-decoration: none;line-height: 2em; display: inline-block; color: darkmagenta; transition: 200ms;}
+a:hover {color: magenta;}
+
+ul {display: flex; flex-direction: column;}
+
+li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    line-height: 2em;
+    border-bottom: 1px solid;
+    padding: 0.5em 0;
+}
+
+li:last-child {border-bottom: none;}
+
+input, button {
+    line-height: 2em;
+    padding: 0 0.5em;
+	font-size: 1rem;
+    border: none;
+}
+
+/* ************************************** nav */
+
+#header .nav-brand {font-weight: 700;}
+
+/* ************************************** form */
+
+#formulario-entrada form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5em;
+}
+
+#formulario-entrada form input {
+    flex-grow: 1;
+    width: 100%;
+}
+
+#formulario-entrada form button {
+    color: white;
+    background-color: darkorchid;
+    margin-left: 0.5em;
+    transition: 200ms;
+}
+
+#formulario-entrada form button:hover {
+    background-color: magenta;
+    cursor: pointer;
+}
+
+/* ************************************** tarefas */
+
+#tarefas a {
+    padding: 0 0.5em;
+}
+
+#tarefas ul li {
+    border-color: #dadada;
+}
+
+#tarefas .tarefas-concluidas * {
+    color: #ceccc5;
+}
+
+#tarefas .tarefas-concluidas ul li {
+    text-decoration: line-through;
+}

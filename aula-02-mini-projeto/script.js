@@ -13,6 +13,8 @@ function addList(newText) {
         listElement.appendChild(textNode)
         lista.appendChild(listElement)
 
+        console.log(entrada.value)
+
         entrada.value = ""
     }
 }
