@@ -6,25 +6,25 @@
 
 html {background-color: #f0f0f0; cursor: default;}
 
-body {margin: 0 auto; padding: 1em; max-width: 480px;}
+body {margin: 0 auto; padding-top: 2.5em; max-width: 480px;}
 
-h2 {font-size: 0.875em; font-weight: 700; margin-top: 2em;}
+h2 {font-size: 0.875em; font-weight: 700; color: darkmagenta;padding: 2.5em 0 1em;}
 
-a {text-decoration: none;line-height: 2em; display: inline-block; color: darkmagenta; transition: 200ms;}
+a {text-decoration: none; display: inline-block; color: darkmagenta; transition: 200ms;}
 a:hover {color: magenta;}
 
 ul {display: flex; flex-direction: column;}
 
-li {
+ul li {
     list-style: none;
     display: flex;
     justify-content: space-between;
     line-height: 2em;
-    border-bottom: 1px solid;
+    border-top: 1px solid;
     padding: 0.5em 0;
 }
 
-li:last-child {border-bottom: none;}
+ul li:last-child {border-bottom: 1px solid;}
 
 input, button {
     line-height: 2em;
@@ -33,43 +33,58 @@ input, button {
     border: none;
 }
 
-/* ************************************** nav */
+.hide {display: none;}
+
+/* ************************************** header */
+
+#header {padding: 0;}
 
 #header .nav-brand {font-weight: 700;}
 
 /* ************************************** form */
 
-#formulario-entrada form {
+#formulario-entrada {
     display: flex;
     justify-content: space-between;
-    margin-top: 0.5em;
+    margin-top: 1em;
 }
 
-#formulario-entrada form input {
+#formulario-entrada input {
     flex-grow: 1;
     width: 100%;
 }
 
-#formulario-entrada form button {
+#formulario-entrada button {
     color: white;
     background-color: darkorchid;
     margin-left: 0.5em;
     transition: 200ms;
 }
 
-#formulario-entrada form button:hover {
+#formulario-entrada button:hover {
     background-color: magenta;
     cursor: pointer;
 }
 
 /* ************************************** tarefas */
 
+#tarefas {
+    padding-top: 0em;
+}
+
 #tarefas a {
     padding: 0 0.5em;
+    line-height: 2em;
 }
 
 #tarefas ul li {
     border-color: #dadada;
+    transition: 200ms;
+    padding-left: 0.5em;
+}
+
+#tarefas ul li:hover {
+    background-color: #ececec;
 }
 
 #tarefas .tarefas-concluidas * {

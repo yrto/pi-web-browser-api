@@ -5,13 +5,18 @@ const tarefasConcluidas = document.querySelector(".tarefas-concluidas ul")
 
 campoEntrada.focus() // abre a página com o input selecionado
 
-const tarefaAbertaActions = `<span class="action-buttons"><a href="#" class="concluir-tarefa"><i class="fas fa-check"></i></a><a href="#" class="remover-tarefa"><i class="fas fa-times"></i></a><span>`
-const tarefaConcluidaActions = `<span class="action-buttons"><a href="#" class="desconcluir-tarefa"><i class="fas fa-undo"></i></a><span>`
+const tarefaAbertaActions = `<span class="action-buttons"><a href="#" class="concluir-tarefa"><i class="fas fa-check"></i></a><a href="#" class="remover-tarefa"><i class="fas fa-times"></i></a></span>`
+const tarefaConcluidaActions = `<span class="action-buttons"><a href="#" class="desconcluir-tarefa"><i class="fas fa-undo"></i></a></span>`
+
+const vazia = () => {
+    tarefasAbertas.hasChildNodes() ? tarefasAbertas.parentNode.classList.remove("hide") : tarefasAbertas.parentNode.classList.add("hide")
+    tarefasConcluidas.hasChildNodes() ? tarefasConcluidas.parentNode.classList.remove("hide") : tarefasConcluidas.parentNode.classList.add("hide")
+}
 
 const criarTarefa = entrada => {
-    if (entrada.value != "") {
+    if (entrada.value.trim() != "") {
         const novaTarefa = document.createElement("li")
-        const novoTexto = document.createTextNode(entrada.value)
+        const novoTexto = document.createTextNode(entrada.value.trim())
         novaTarefa.appendChild(novoTexto)
         entrada.value = ""
         return novaTarefa
@@ -21,6 +26,7 @@ const criarTarefa = entrada => {
 const adicionarTarefa = (lista, item, actions) => {
     item.innerHTML += actions
     lista.appendChild(item)
+    vazia()
 }
 
 const removerTarefa = evt => {
