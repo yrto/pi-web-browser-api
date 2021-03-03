@@ -4,7 +4,7 @@
 
 /* ************************************** root */
 
-html {background-color: #f0f0f0; cursor: default; margin: 1.5em}
+html {background-color: #f0f0f0; cursor: default; margin: 0 1.5em}
 
 body {margin: 0 auto; max-width: 480px;}
 
@@ -41,7 +41,7 @@ input:focus, button:focus {
 
 /* ************************************** header */
 
-#header {padding: 0;}
+#header {padding-top: 1.75em;}
 
 #header .nav-brand {font-weight: 700;}
 
@@ -106,7 +106,7 @@ input:focus, button:focus {
 
 #footer {
     color: #ceccc5;
-    margin-top: 2.5em;
+    margin: 2.5em 0;
 }
 
 #footer p {font-size: 0.75em;}
