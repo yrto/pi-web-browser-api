@@ -33,6 +33,7 @@ const removerTarefa = evt => {
     if (evt.target.parentNode.className === "remover-tarefa") {
         const item = evt.target.parentNode.parentNode.parentNode
         item.remove()
+        vazia()
     }
 }
 
